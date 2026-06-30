@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { Star, MessageCircle, CheckCircle2, XCircle } from 'lucide-react'
+import Link from 'next/link'
 import { StudentAvatar } from './student-avatar'
 
 interface StudentCardProps {
@@ -134,28 +134,26 @@ export function StudentCard({
 
       {/* Actions */}
       <div className="flex gap-2">
-<Link
-  href={profileLink}
-  className="flex-1 bg-primary text-primary-foreground rounded px-3 py-2 text-xs font-medium hover:bg-primary/90 transition-colors text-center block"
->
-  View Profile
-</Link>
-
-<button
-  onClick={onAssignInterview}
-  className="flex-1 bg-secondary text-secondary-foreground rounded px-3 py-2 text-xs font-medium hover:bg-secondary/90 transition-colors"
-  title="Assign Interview"
->
-  Interview
-</button>
-
-<button
-  onClick={onReject}
-  className="px-2 py-2 text-muted-foreground hover:text-red-600 transition-colors"
-  title="Reject"
->
-  <XCircle size={16} />
-</button>
+        <Link
+          href={profileLink}
+          className="flex-1 bg-primary text-primary-foreground rounded px-3 py-2 text-xs font-medium hover:bg-primary/90 transition-colors text-center block"
+        >
+          View Profile
+        </Link>
+        <button
+          onClick={onAssignInterview}
+          className="flex-1 bg-secondary text-secondary-foreground rounded px-3 py-2 text-xs font-medium hover:bg-secondary/90 transition-colors"
+          title="Assign Interview"
+        >
+          Interview
+        </button>
+        <button
+          onClick={onReject}
+          className="px-2 py-2 text-muted-foreground hover:text-red-600 transition-colors"
+          title="Reject"
+        >
+          <XCircle size={16} />
+        </button>
       </div>
     </div>
   )

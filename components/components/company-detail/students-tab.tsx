@@ -255,7 +255,7 @@ export function StudentsTab({ companyId }: StudentsTabProps) {
       {viewMode === 'grid' && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {mockStudents.map((student) => (
-           <StudentCard
+            <StudentCard
               key={student.id}
               id={student.id}
               companyId={companyId}
