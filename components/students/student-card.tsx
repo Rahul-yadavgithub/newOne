@@ -1,7 +1,16 @@
 import { Star, MessageCircle, CheckCircle2, XCircle } from 'lucide-react'
+<<<<<<< HEAD
 import { StudentAvatar } from './student-avatar'
 
 interface StudentCardProps {
+=======
+import Link from 'next/link'
+import { StudentAvatar } from './student-avatar'
+
+interface StudentCardProps {
+  id?: string
+  companyId?: string
+>>>>>>> ee4078c (feat: pass companyId to StudentsTab and add new StudentProfilePage component)
   name: string
   department: string
   cgpa: number
@@ -17,6 +26,11 @@ interface StudentCardProps {
 }
 
 export function StudentCard({
+<<<<<<< HEAD
+=======
+  id,
+  companyId,
+>>>>>>> ee4078c (feat: pass companyId to StudentsTab and add new StudentProfilePage component)
   name,
   department,
   cgpa,
@@ -30,6 +44,10 @@ export function StudentCard({
   onReject,
   onAssignInterview,
 }: StudentCardProps) {
+<<<<<<< HEAD
+=======
+  const profileLink = id && companyId ? `/app/companies/${companyId}/students/${id}` : '#'
+>>>>>>> ee4078c (feat: pass companyId to StudentsTab and add new StudentProfilePage component)
   const getInitials = (fullName: string) => {
     return fullName
       .split(' ')
@@ -128,6 +146,7 @@ export function StudentCard({
 
       {/* Actions */}
       <div className="flex gap-2">
+<<<<<<< HEAD
         <button
           onClick={onViewProfile}
           className="flex-1 bg-primary text-primary-foreground rounded px-3 py-2 text-xs font-medium hover:bg-primary/90 transition-colors"
@@ -137,6 +156,18 @@ export function StudentCard({
         <button
           onClick={onAssignInterview}
           className="flex-1 bg-secondary text-secondary-foreground rounded px-3 py-2 text-xs font-medium hover:bg-secondary/90 transition-colors"
+=======
+        <Link
+          href={profileLink}
+          className="flex-1 bg-primary text-primary-foreground rounded px-3 py-2 text-xs font-medium hover:bg-primary/90 transition-colors text-center block"
+        >
+          View Profile
+        </Link>
+        <button
+          onClick={onAssignInterview}
+          className="flex-1 bg-secondary text-secondary-foreground rounded px-3 py-2 text-xs font-medium hover:bg-secondary/90 transition-colors"
+          title="Assign Interview"
+>>>>>>> ee4078c (feat: pass companyId to StudentsTab and add new StudentProfilePage component)
         >
           Interview
         </button>

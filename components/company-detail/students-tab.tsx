@@ -117,7 +117,11 @@ const pipelineStages = [
   { name: 'Offer Accepted', count: 28, percentage: 80 },
 ]
 
-export function StudentsTab() {
+interface StudentsTabProps {
+  companyId?: string
+}
+
+export function StudentsTab({ companyId }: StudentsTabProps) {
   const [viewMode, setViewMode] = useState<'table' | 'grid' | 'compact'>('table')
   const [selectedStudents, setSelectedStudents] = useState<string[]>([])
 
@@ -253,6 +257,11 @@ export function StudentsTab() {
           {mockStudents.map((student) => (
             <StudentCard
               key={student.id}
+<<<<<<< HEAD
+=======
+              id={student.id}
+              companyId={companyId}
+>>>>>>> ee4078c (feat: pass companyId to StudentsTab and add new StudentProfilePage component)
               name={student.name}
               department={student.department}
               cgpa={student.cgpa}

@@ -244,7 +244,7 @@ export default function CompanyDetailPage({ params }: { params: { id: string } }
 
           {activeTab === 'timeline' && <TimelineTab />}
           {activeTab === 'drive' && <PlacementDriveTab />}
-          {activeTab === 'students' && <StudentsTab />}
+          {activeTab === 'students' && <StudentsTab companyId={params.id} />}
           {activeTab === 'communication' && <CommunicationTab />}
           {activeTab === 'meetings' && <PlaceholderTab tabName="Meetings" />}
           {activeTab === 'documents' && <DocumentsTab />}

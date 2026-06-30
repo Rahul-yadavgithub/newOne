@@ -1,7 +1,10 @@
 import { Star, MessageCircle, CheckCircle2, XCircle } from 'lucide-react'
+import Link from 'next/link'
 import { StudentAvatar } from './student-avatar'
 
 interface StudentCardProps {
+  id?: string
+  companyId?: string
   name: string
   department: string
   cgpa: number
@@ -17,6 +20,8 @@ interface StudentCardProps {
 }
 
 export function StudentCard({
+  id,
+  companyId,
   name,
   department,
   cgpa,
@@ -30,6 +35,7 @@ export function StudentCard({
   onReject,
   onAssignInterview,
 }: StudentCardProps) {
+  const profileLink = id && companyId ? `/app/companies/${companyId}/students/${id}` : '#'
   const getInitials = (fullName: string) => {
     return fullName
       .split(' ')
@@ -128,15 +134,16 @@ export function StudentCard({
 
       {/* Actions */}
       <div className="flex gap-2">
-        <button
-          onClick={onViewProfile}
-          className="flex-1 bg-primary text-primary-foreground rounded px-3 py-2 text-xs font-medium hover:bg-primary/90 transition-colors"
+        <Link
+          href={profileLink}
+          className="flex-1 bg-primary text-primary-foreground rounded px-3 py-2 text-xs font-medium hover:bg-primary/90 transition-colors text-center block"
         >
           View Profile
-        </button>
+        </Link>
         <button
           onClick={onAssignInterview}
           className="flex-1 bg-secondary text-secondary-foreground rounded px-3 py-2 text-xs font-medium hover:bg-secondary/90 transition-colors"
+          title="Assign Interview"
         >
           Interview
         </button>
