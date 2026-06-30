@@ -11,6 +11,7 @@ import { TimelineTab } from '@/components/company-detail/timeline-tab'
 import { CommunicationTab } from '@/components/company-detail/communication-tab'
 import { DocumentsTab } from '@/components/company-detail/documents-tab'
 import { PlacementDriveTab } from '@/components/company-detail/placement-drive-tab'
+import { StudentsTab } from '@/components/company-detail/students-tab'
 import { PlaceholderTab } from '@/components/company-detail/placeholder-tab'
 import { SidebarPanel } from '@/components/company-detail/sidebar-panel'
 
@@ -243,7 +244,7 @@ export default function CompanyDetailPage({ params }: { params: { id: string } }
 
           {activeTab === 'timeline' && <TimelineTab />}
           {activeTab === 'drive' && <PlacementDriveTab />}
-          {activeTab === 'students' && <PlaceholderTab tabName="Students" />}
+          {activeTab === 'students' && <StudentsTab />}
           {activeTab === 'communication' && <CommunicationTab />}
           {activeTab === 'meetings' && <PlaceholderTab tabName="Meetings" />}
           {activeTab === 'documents' && <DocumentsTab />}
