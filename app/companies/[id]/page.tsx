@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { ArrowLeft } from 'lucide-react'
 import { CompanyHeader } from '@/components/company-detail/company-header'
 import { ProgressTracker } from '@/components/company-detail/progress-tracker'
 import { WorkspaceTabs } from '@/components/company-detail/workspace-tabs'
@@ -180,12 +182,24 @@ const mockMeetings = [
 ]
 
 export default function CompanyDetailPage({ params }: { params: { id: string } }) {
+  const router = useRouter()
   const [activeTab, setActiveTab] = useState('overview')
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Back Button */}
+      <div className="md:ml-64 pt-20 px-6 mb-4">
+        <button
+          onClick={() => router.back()}
+          className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-colors"
+        >
+          <ArrowLeft size={18} />
+          Go Back
+        </button>
+      </div>
+
       {/* Header */}
-      <div className="md:ml-64 pt-20">
+      <div className="md:ml-64 pt-0">
         <CompanyHeader company={mockCompanyData} />
       </div>
 
