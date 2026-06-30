@@ -13,11 +13,12 @@ import {
   X,
 } from 'lucide-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 const navItems = [
-  { icon: Home, label: 'Dashboard', href: '#', active: true },
-  { icon: Users, label: 'Companies', href: '#' },
+  { icon: Home, label: 'Dashboard', href: '/', active: false },
+  { icon: Users, label: 'Companies', href: '/companies', active: false },
   { icon: GraduationCap, label: 'Placement Drives', href: '#' },
   { icon: Users, label: 'Students', href: '#' },
   { icon: BarChart3, label: 'Analytics', href: '#' },
@@ -28,6 +29,7 @@ const navItems = [
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <>
@@ -76,13 +78,14 @@ export function Sidebar() {
         <nav className="px-3 py-4 space-y-1">
           {navItems.map((item) => {
             const Icon = item.icon
+            const isActive = pathname === item.href
             return (
               <Link
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
                 className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all group ${
-                  item.active
+                  isActive
                     ? 'bg-sidebar-primary text-sidebar-primary-foreground'
                     : 'text-sidebar-foreground hover:bg-sidebar-accent'
                 }`}
