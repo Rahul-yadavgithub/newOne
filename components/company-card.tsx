@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import {
   Building2,
   Calendar,
@@ -76,18 +77,17 @@ export function CompanyCard({
             <div className="absolute right-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-lg z-20">
               {actionMenu.map((action) => {
                 const Icon = action.icon
+                const href = action.id === 'details' ? `/companies/${id}` : '#'
                 return (
-                  <button
+                  <Link
                     key={action.id}
-                    onClick={() => {
-                      onActionClick?.(action.id)
-                      setIsMenuOpen(false)
-                    }}
-                    className="w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-muted transition-colors first:rounded-t-lg last:rounded-b-lg"
+                    href={href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-muted transition-colors first:rounded-t-lg last:rounded-b-lg block"
                   >
                     <Icon size={16} className="text-muted-foreground" />
                     <span>{action.label}</span>
-                  </button>
+                  </Link>
                 )
               })}
             </div>
@@ -145,12 +145,12 @@ export function CompanyCard({
           <Calendar size={14} />
           <span>{deadline}</span>
         </div>
-        <button
-          onClick={() => onActionClick?.('details')}
-          className="px-3 py-2 bg-primary text-primary-foreground rounded-lg text-xs font-medium hover:bg-primary/90 transition-colors"
+        <Link
+          href={`/companies/${id}`}
+          className="px-3 py-2 bg-primary text-primary-foreground rounded-lg text-xs font-medium hover:bg-primary/90 transition-colors flex items-center justify-center"
         >
           View Details
-        </button>
+        </Link>
       </div>
     </div>
   )
