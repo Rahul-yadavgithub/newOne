@@ -256,10 +256,9 @@ export function StudentsTab({ companyId }: StudentsTabProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {mockStudents.map((student) => (
            <StudentCard
-    key={student.id}
-    id={student.id}
-    companyId={companyId}
-    name={student.name}
+              key={student.id}
+              id={student.id}
+              companyId={companyId}
               name={student.name}
               department={student.department}
               cgpa={student.cgpa}
