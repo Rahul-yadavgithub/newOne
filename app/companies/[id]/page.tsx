@@ -9,6 +9,7 @@ import { WorkspaceTabs } from '@/components/company-detail/workspace-tabs'
 import { OverviewTab } from '@/components/company-detail/overview-tab'
 import { TimelineTab } from '@/components/company-detail/timeline-tab'
 import { CommunicationTab } from '@/components/company-detail/communication-tab'
+import { DocumentsTab } from '@/components/company-detail/documents-tab'
 import { PlaceholderTab } from '@/components/company-detail/placeholder-tab'
 import { SidebarPanel } from '@/components/company-detail/sidebar-panel'
 
@@ -244,7 +245,7 @@ export default function CompanyDetailPage({ params }: { params: { id: string } }
           {activeTab === 'students' && <PlaceholderTab tabName="Students" />}
           {activeTab === 'communication' && <CommunicationTab />}
           {activeTab === 'meetings' && <PlaceholderTab tabName="Meetings" />}
-          {activeTab === 'documents' && <PlaceholderTab tabName="Documents" description="Explore all documents related to this placement drive." />}
+          {activeTab === 'documents' && <DocumentsTab />}
           {activeTab === 'activity' && <PlaceholderTab tabName="Activity" />}
           {activeTab === 'notes' && <PlaceholderTab tabName="Notes" />}
         </WorkspaceTabs>
