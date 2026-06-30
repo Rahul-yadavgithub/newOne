@@ -5,6 +5,7 @@ import { CompanyHeader } from '@/components/company-detail/company-header'
 import { ProgressTracker } from '@/components/company-detail/progress-tracker'
 import { WorkspaceTabs } from '@/components/company-detail/workspace-tabs'
 import { OverviewTab } from '@/components/company-detail/overview-tab'
+import { TimelineTab } from '@/components/company-detail/timeline-tab'
 import { PlaceholderTab } from '@/components/company-detail/placeholder-tab'
 import { SidebarPanel } from '@/components/company-detail/sidebar-panel'
 
@@ -224,7 +225,7 @@ export default function CompanyDetailPage({ params }: { params: { id: string } }
             </div>
           )}
 
-          {activeTab === 'timeline' && <PlaceholderTab tabName="Timeline" />}
+          {activeTab === 'timeline' && <TimelineTab />}
           {activeTab === 'drive' && <PlaceholderTab tabName="Placement Drive" />}
           {activeTab === 'students' && <PlaceholderTab tabName="Students" />}
           {activeTab === 'communication' && <PlaceholderTab tabName="Communication" />}
