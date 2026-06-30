@@ -1,16 +1,10 @@
-import { Star, MessageCircle, CheckCircle2, XCircle } from 'lucide-react'
-<<<<<<< HEAD
-import { StudentAvatar } from './student-avatar'
-
-interface StudentCardProps {
-=======
 import Link from 'next/link'
+import { Star, MessageCircle, CheckCircle2, XCircle } from 'lucide-react'
 import { StudentAvatar } from './student-avatar'
 
 interface StudentCardProps {
   id?: string
   companyId?: string
->>>>>>> ee4078c (feat: pass companyId to StudentsTab and add new StudentProfilePage component)
   name: string
   department: string
   cgpa: number
@@ -26,11 +20,8 @@ interface StudentCardProps {
 }
 
 export function StudentCard({
-<<<<<<< HEAD
-=======
   id,
   companyId,
->>>>>>> ee4078c (feat: pass companyId to StudentsTab and add new StudentProfilePage component)
   name,
   department,
   cgpa,
@@ -44,10 +35,7 @@ export function StudentCard({
   onReject,
   onAssignInterview,
 }: StudentCardProps) {
-<<<<<<< HEAD
-=======
   const profileLink = id && companyId ? `/app/companies/${companyId}/students/${id}` : '#'
->>>>>>> ee4078c (feat: pass companyId to StudentsTab and add new StudentProfilePage component)
   const getInitials = (fullName: string) => {
     return fullName
       .split(' ')
